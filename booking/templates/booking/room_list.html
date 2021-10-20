@@ -1,0 +1,14 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/room_table.css' %}">
+
+{% block content %}
+    <table>
+    <tr><th scope="col">Room Number</th><th scope="col">Price</th><th scope="col">Occupied</th></tr>
+    {% for room in room_list %}
+        <tr><td>{{ room.room_num }}</td> <td>{{ room.price }}</td> <td>{{ room.occupied }}</td></tr>
+    {% endfor %}
+    </table>
+{% endblock %}

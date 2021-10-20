@@ -1,0 +1,15 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/room_table.css' %}">
+
+{% block content %}
+    <a href="{% url "employee_create" %}"><button>Add Employee</button></a>
+    <table>
+    <tr><th>Name</th><th>Employee ID</th><th>Position</th><th>Salary</th></tr>
+{% for employee in employee_list %}
+    <tr><td>{{ employee.first }}</td> <td>{{ employee.last }}</td> <td>{{ employee.empid }}</td> <td>{{ employee.position }}</td><td>{{ employee.salary }}</td><td><a href="{% url 'employee_update' employee.id %} "><button>Update</button> </a></td><td><a href="{% url 'employee_delete' employee.id %} "><button>Delete</button></a></td></tr>
+    {% endfor %}
+    </table>
+{% endblock %}
