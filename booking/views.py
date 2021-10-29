@@ -35,7 +35,7 @@ class EmployeeCreate(CreateView):
 
 class StayCreate(CreateView):
     model = Stay
-    template_name = 'booking/templates/registration/stay_create_form.html'
+    template_name = 'booking/stay_create_form.html'
     form_class = StayCreateForm
 
 
@@ -53,9 +53,9 @@ class EmployeeList(ListView):
 
 def home(request):
     # templates folder is already assumed b/c this app is registered in settings.py
-    name = Homer
+    name = "Homer"
     loggedin=False
-    context = {"user_first_name": name, "rooms":ROOMS, "loggedin":loggedin}
+    context = {"user_first_name": name, "rooms":Room, "loggedin":loggedin}
     return render(request, 'booking/home.html', context=context)
 
 @login_required()

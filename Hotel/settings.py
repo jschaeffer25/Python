@@ -119,7 +119,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = 'booking/templates/booking/static/'
+STATIC_URL = 'templates/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "templates/static/",
+    'booking/templates/booking/static/css',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
